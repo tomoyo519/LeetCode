@@ -9,5 +9,5 @@ class Solution:
                 rec(open+1, close, s+'(')
             if close < open :
                 rec(open, close +1, s+')')
-        rec(1,0,'(')
+        rec(0,0,'')
         return result
