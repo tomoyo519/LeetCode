@@ -1,3 +1,4 @@
+from typing import List
 class Solution:
     def minimumCardPickup(self, cards: List[int]) -> int:
         # 연속된 카드를 구할때까지 최소한 몇장을 뒤집어야 하냐
@@ -12,7 +13,13 @@ class Solution:
             if cards[i] in dict:
                 answer = min(answer, (i - dict[cards[i]]) +1 )
             dict[cards[i]] = i
+            print(dict)
+        
         if answer == float("inf"):
             return -1
         else:
             return answer
+        
+sol = Solution()
+cards = [3,4,2,3,4,7]
+print(sol.minimumCardPickup(cards))
